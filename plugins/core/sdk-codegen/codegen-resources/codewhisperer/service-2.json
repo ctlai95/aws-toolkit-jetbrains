@@ -151,6 +151,12 @@
             "type":"string",
             "enum":["codescan/findings/1.0"]
         },
+        "CodeScanName":{
+            "type":"string",
+            "documentation":"<p>Code analysis scan name</p>",
+            "max":128,
+            "min":1
+        },
         "CodeScanStatus":{
             "type":"string",
             "enum":[
@@ -179,7 +185,8 @@
                 "clientToken":{
                     "shape":"CreateCodeScanRequestClientTokenString",
                     "idempotencyToken":true
-                }
+                },
+                "codeScanName":{"shape":"CodeScanName"}
             }
         },
         "CreateCodeScanRequestClientTokenString":{

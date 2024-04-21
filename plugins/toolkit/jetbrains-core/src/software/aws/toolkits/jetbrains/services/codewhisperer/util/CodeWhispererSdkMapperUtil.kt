@@ -51,6 +51,7 @@ fun CreateCodeScanRequest.transform(): StartCodeAnalysisRequest =
         .artifacts(this.artifacts().entries.map { it.key.transform() to it.value }.toMap())
         .programmingLanguage(this.programmingLanguage().transform())
         .clientToken(this.clientToken())
+        .codeScanName(this.codeScanName())
         .build()
 
 fun StartCodeAnalysisResponse.transform(): CreateCodeScanResponse =
